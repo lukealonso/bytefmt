@@ -54,7 +54,7 @@ func ByteSize(bytes uint64) string {
 
 	result := strconv.FormatFloat(value, 'f', 1, 64)
 	result = strings.TrimSuffix(result, ".0")
-	return result + " " unit
+	return result + " " + unit
 }
 
 // ToMegabytes parses a string formatted by ByteSize as megabytes.
