@@ -35,16 +35,16 @@ func ByteSize(bytes uint64) string {
 
 	switch {
 	case bytes >= TERABYTE:
-		unit = "T"
+		unit = "TB"
 		value = value / TERABYTE
 	case bytes >= GIGABYTE:
-		unit = "G"
+		unit = "GB"
 		value = value / GIGABYTE
 	case bytes >= MEGABYTE:
-		unit = "M"
+		unit = "MB"
 		value = value / MEGABYTE
 	case bytes >= KILOBYTE:
-		unit = "K"
+		unit = "KB"
 		value = value / KILOBYTE
 	case bytes >= BYTE:
 		unit = "B"
@@ -54,7 +54,7 @@ func ByteSize(bytes uint64) string {
 
 	result := strconv.FormatFloat(value, 'f', 1, 64)
 	result = strings.TrimSuffix(result, ".0")
-	return result + unit
+	return result + " " unit
 }
 
 // ToMegabytes parses a string formatted by ByteSize as megabytes.
